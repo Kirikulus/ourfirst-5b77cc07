@@ -1010,7 +1010,6 @@
         <h2>Заходи</h2>
         <p class="lead">Сначала обними меня так крепко, как можешь.</p>
         <p class="whisper">Остальной мир остался снаружи.</p>
-        <button class="music" type="button" data-music="threshold">Поставить музыку</button>
         <a class="next" href="#s-table">Я вошла</a>
       </div>
     </section>
@@ -1022,7 +1021,6 @@
         <p class="lead">Свечи горят, и пахнет приятно — так и задумано. Теперь выпьем по бокалу и поговорим.</p>
         <p class="whisper">Тост короткий: за то, что ты пришла.</p>
         <p class="whisper" style="margin-top:18px">Кое-что я для тебя припрятал. Потом.</p>
-        <button class="music" type="button" data-music="table">Поставить музыку</button>
         <a class="next" href="#s-closeup">Дальше</a>
       </div>
     </section>
@@ -1060,8 +1058,8 @@
         <h2>Держи</h2>
         <div class="gift is-open" aria-hidden="true"><div class="gift__box"></div><div class="gift__lid"></div><div class="gift__ribbon"></div></div>
         <p class="lead" id="giftLine">Открой. Надеюсь, он подойдёт тебе — и будет напоминать обо мне.</p>
-        <p class="whisper">Дай руку — надену.</p>
-        <button class="music" type="button" data-music="gift">Поставить музыку</button>
+        <p class="whisper">Не спеши открывать. Сначала дослушай.</p>
+        <p class="whisper" style="margin-top:14px">Дай руку — надену.</p>
         <a class="next" href="#s-film">Дальше</a>
       </div>
     </section>
@@ -1107,7 +1105,7 @@
 
   <script>
     /* Ссылки на треки; пусто = ничего не откроется. */
-    var MUSIC = { threshold:"", table:"", gift:"" };
+    /* Музыка идёт с колонки — Кирилл включает сам по шпаргалке. Кнопок в приложении нет. */
     /* Колода: 4 главы по 5 вопросов (по очереди: Кириллу / Суми) + действие в конце главы.
        У действия два варианта [спокойный, смелый] — какой показать, решает бабочка темпа. */
     var DECK = [
@@ -1181,14 +1179,8 @@
         document.addEventListener("click", function(e){
           var t = e.target;
           var en = t.closest ? t.closest("[data-enter]") : null;
-          var music = t.closest ? t.closest("[data-music]") : null;
           var choice = t.closest ? t.closest(".choice") : null;
           if(en){ var inp = byId("wordIn"); if(inp) word = inp.value.replace(/^\s+|\s+$/g,""); return; }
-          if(music){
-            var u = MUSIC[music.getAttribute("data-music")];
-            if(u && u.replace(/\s/g,"")){ window.open(u,"_blank"); }
-            return;
-          }
           if(choice){
             var box = choice.parentNode, list = box.getElementsByClassName("choice");
             for(var i=0;i<list.length;i++){ list[i].className = list[i].className.replace(/\s*is-picked/,""); }
@@ -1247,8 +1239,9 @@
         function tickClock(){
           if(!clock) return;
           var now = new Date();
-          var target = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 18, 0, 0);
-          var unlock = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 17, 45, 0);
+          /* Вечер: 14 июля 2026, 18:00 (месяцы с нуля: 6 = июль) */
+          var target = new Date(2026, 6, 14, 18, 0, 0);
+          var unlock = new Date(2026, 6, 14, 17, 45, 0);
           var diff = target - now;
           if(diff <= 0){
             clock.textContent = "00:00:00";
