@@ -999,9 +999,9 @@
     <!-- ТАЙМЕР (экран по умолчанию) -->
     <section class="screen" id="s-timer">
       <div class="scene" style="text-align:center">
-        <p class="eyebrow" style="justify-content:center">сегодня</p>
+        <p class="eyebrow" style="justify-content:center">до нас</p>
         <div class="clock" id="clock">18:00:00</div>
-        <p class="whisper" id="clockLabel">Вечер начнётся в шесть.</p>
+        <p class="whisper" id="clockLabel">Вечер начнётся в шесть. Я уже жду.</p>
         <a class="next" href="#s-letter" id="atDoor">Я у двери</a>
       </div>
     </section>
@@ -1266,7 +1266,7 @@
           } else {
             var s = Math.floor(diff/1000);
             clock.textContent = two(Math.floor(s/3600)) + ":" + two(Math.floor(s/60)%60) + ":" + two(s%60);
-            if(clockLabel) clockLabel.textContent = "Вечер начнётся в шесть.";
+            if(clockLabel) clockLabel.textContent = "Вечер начнётся в шесть. Я уже жду.";
           }
           if(atDoor) atDoor.style.display = (now >= unlock) ? "" : "none";
         }
