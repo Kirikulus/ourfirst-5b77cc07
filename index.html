@@ -926,9 +926,12 @@
     .clock{margin:8px 0 18px;color:var(--amber);font-family:var(--serif);font-size:clamp(3.4rem,17vw,6.4rem);letter-spacing:.05em;line-height:1;text-shadow:0 0 44px rgba(211,161,95,.35);font-variant-numeric:tabular-nums}
 
     #warmth{position:fixed;inset:0;z-index:18;pointer-events:none;opacity:0;transition:opacity 600ms ease;background:radial-gradient(circle at 50% 82%, rgba(112,44,50,.5), transparent 62%)}
-    #tempo{position:fixed;left:0;right:0;bottom:calc(var(--safe-bottom) - 4px);z-index:135;display:flex;align-items:center;justify-content:center;gap:12px}
+    /* грид 1fr|auto|1fr: трек всегда ровно в центре экрана, подписи тянутся к нему */
+    #tempo{position:fixed;left:0;right:0;bottom:calc(var(--safe-bottom) - 4px);z-index:135;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;padding:0 22px}
     #tempo[hidden]{display:none}
     .tempo__lbl{color:var(--muted);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase}
+    .tempo__lbl:first-child{text-align:right}
+    .tempo__lbl:last-child{text-align:left}
     #tempoTrack{position:relative;width:150px;height:30px;cursor:pointer}
     #tempoTrack::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,rgba(238,229,214,.16),var(--amber));opacity:.6}
     #tempoFly{position:absolute;top:50%;left:50%;width:11px;height:11px;margin:-5.5px 0 0 -5.5px;background:var(--amber);transform:rotate(45deg);box-shadow:0 0 14px rgba(211,161,95,.65);transition:left 200ms ease}
@@ -957,9 +960,23 @@
     .choice{width:100%;min-height:56px;padding:15px 18px;text-align:left;color:#d9d0c3;border:1px solid var(--line);border-radius:2px;background:rgba(255,255,255,.022);font-family:var(--serif);font-size:1.05rem;cursor:pointer}
     .choice.is-picked{border-color:rgba(211,161,95,.5);background:var(--amber-soft);color:#eadfce}
 
-    .next{display:flex;align-items:center;justify-content:center;width:100%;max-width:300px;margin:28px auto 0;min-height:58px;padding:16px 20px;color:var(--paper);border:1px solid rgba(211,161,95,.42);border-radius:2px;background:linear-gradient(110deg,rgba(112,44,50,.22),rgba(211,161,95,.1));font:inherit;cursor:pointer}
+    .next{position:relative;display:flex;align-items:center;justify-content:center;width:100%;max-width:300px;margin:28px auto 0;min-height:58px;padding:16px 42px;color:var(--paper);border:1px solid rgba(211,161,95,.42);border-radius:2px;background:linear-gradient(110deg,rgba(112,44,50,.22),rgba(211,161,95,.1));font:inherit;cursor:pointer}
     .next:active{transform:scale(.99)}
-    .next::after{content:"›";margin-left:12px;color:var(--amber);font-family:var(--serif);font-size:1.3rem}
+    /* стрелка вне потока: подпись стоит в истинном центре кнопки */
+    .next::after{content:"›";position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--amber);font-family:var(--serif);font-size:1.3rem}
+
+    /* редакционно-левые экраны: кнопка к левому краю, как весь текст */
+    #s-threshold .next,#s-table .next,#s-closeup .next,#s-valley .next,#s-gift .next,#s-film .next,#s-finale .next{margin-left:0;margin-right:0}
+
+    /* таймер — центрованная композиция */
+    #s-timer .eyebrow::before{display:none}
+    #s-timer .whisper{margin-inline:auto}
+
+    /* финал: бабочка к левому краю текстовой колонки (−4px — оптическая компенсация крыла) */
+    #s-finale .butterfly{margin:0 0 32px -4px}
+
+    /* полоса темпа не наезжает на нижние ссылки */
+    #s-closeup,#s-valley,#s-gift,#s-film{padding-bottom:calc(var(--safe-bottom) + 68px)}
 
     .modes{display:grid;gap:10px;margin:22px 0 4px}
     .fin-word{color:var(--amber);font-family:var(--serif);font-style:italic}
