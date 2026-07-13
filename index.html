@@ -966,7 +966,7 @@
       <div class="letter">
         <div class="letter__seal">✦</div>
         <p>Ты у моей двери. Не звони. Сначала прочитай.</p>
-        <p>Я придумал нам вечер. Весь, до титров.</p>
+        <p>Я придумал нам вечер. Весь, до самих титров.</p>
         <div class="field">
           <label for="wordIn">одно слово: чего ты ждёшь от этого вечера</label>
           <input id="wordIn" type="text" maxlength="24" autocomplete="off" enterkeyhint="go" placeholder="одно слово" />
@@ -980,8 +980,8 @@
       <div class="scene">
         <p class="eyebrow">у двери</p>
         <h2>Заходи</h2>
-        <p class="lead">Куртку давай сюда. И сначала — обними меня.</p>
-        <p class="whisper">Город остался снаружи.</p>
+        <p class="lead">Сначала обними меня так крепко, как можешь.</p>
+        <p class="whisper">Остальной мир остался снаружи.</p>
         <button class="music" type="button" data-music="threshold">поставить музыку</button>
         <a class="next" href="#s-table">я вошла</a>
       </div>
@@ -990,14 +990,9 @@
     <section class="screen" id="s-table" data-part="1">
       <div class="scene">
         <p class="eyebrow">за столом</p>
-        <h2>Свет уже потише</h2>
-        <p class="lead">Телефон — экраном вниз. Наливаю я.</p>
+        <h2>Проходи в полумрак</h2>
+        <p class="lead">Свечи горят, и пахнет приятно — так и задумано. Теперь выпьем по бокалу и поговорим.</p>
         <p class="whisper">Тост короткий: за то, что ты пришла.</p>
-        <div class="choices" data-choices>
-          <button class="choice" type="button">Расскажи свой день. По-честному.</button>
-          <button class="choice" type="button">Что тебя сегодня рассмешило?</button>
-        </div>
-        <p class="whisper">Ты рассказываешь, я слушаю. Потом наоборот.</p>
         <p class="whisper" style="margin-top:18px">Кое-что я для тебя припрятал. Потом.</p>
         <button class="music" type="button" data-music="table">поставить музыку</button>
         <a class="next" href="#s-closeup">дальше</a>
@@ -1006,15 +1001,17 @@
 
     <section class="screen" id="s-closeup" data-part="2">
       <div class="scene">
-        <p class="eyebrow">ближе</p>
-        <h2>Теперь без экранов</h2>
-        <p class="lead">Один вопрос, отвечаем оба. Я отвечу первым. Потом ты — только без красивой версии.</p>
-        <div class="choices" data-choices>
-          <button class="choice" type="button">Когда ты поняла, что я тебе нравлюсь? Момент, не дата.</button>
-          <button class="choice" type="button">Какой наш момент ты бы прожила ещё раз?</button>
+        <p class="eyebrow">разговор</p>
+        <h2>Двадцать карт</h2>
+        <p class="lead">Отвечаем оба, я — первым. Ты — только без красивой версии.</p>
+        <div class="qdeck">
+          <p class="whisper" id="qChapter" style="margin-bottom:10px">глава первая — смешное</p>
+          <p class="card__text" id="qText" style="margin:0 0 14px">Какая моя привычка тебя смешит?</p>
+          <p class="card__note" id="qNum">карта 1</p>
+          <button class="next" type="button" id="qNext" style="margin-top:22px">следующая</button>
         </div>
         <p class="whisper">Не торопись. Времени у нас много.</p>
-        <a class="next" href="#s-valley">мы наговорились</a>
+        <a class="next" href="#s-valley" id="qDone">мы наговорились</a>
       </div>
     </section>
 
@@ -1022,9 +1019,8 @@
       <div class="scene">
         <p class="eyebrow">передышка</p>
         <h2>Выдохнули</h2>
-        <p class="lead">Уберём со стола вдвоём. Врубай самый дурацкий трек, какой найдёшь.</p>
+        <p class="lead">Я уберу со стола. А ты включи свою самую любимую музыку.</p>
         <p class="whisper">Потанцуем криво. Никто не видит.</p>
-        <button class="music" type="button" data-music="valley">дурацкий трек</button>
         <a class="next" href="#s-gift">дальше</a>
       </div>
     </section>
@@ -1034,7 +1030,7 @@
         <p class="eyebrow">тебе</p>
         <h2>Держи</h2>
         <div class="gift is-open" aria-hidden="true"><div class="gift__box"></div><div class="gift__lid"></div><div class="gift__ribbon"></div></div>
-        <p class="lead" id="giftLine">Я так и не понял: клевер это или бабочка. Посмотри сама.</p>
+        <p class="lead" id="giftLine">Открой. Надеюсь, он подойдёт тебе — и будет напоминать обо мне.</p>
         <p class="whisper">Дай руку — надену.</p>
         <button class="music" type="button" data-music="gift">поставить музыку</button>
         <a class="next" href="#s-film">дальше</a>
@@ -1046,8 +1042,12 @@
         <p class="eyebrow">кино</p>
         <h2>Гасим свет</h2>
         <p class="lead">Плед на двоих. Ближе, чем обычно.</p>
-        <p class="whisper">Телефон отложи. После титров — сюда.</p>
-        <button class="music" type="button" data-music="film">поставить музыку</button>
+        <p class="lead" style="margin-bottom:14px">Одно решение до запуска. Когда станет страшно —</p>
+        <div class="choices" data-film-choices>
+          <button class="choice" type="button" data-film="hand">дай мне руку. Я возьму её сама.</button>
+          <button class="choice" type="button" data-film="hug">когда я придвинусь — обними меня.</button>
+        </div>
+        <p class="whisper">Выбрала — и телефон экраном вниз, до самых титров.</p>
         <a class="next" href="#s-finale">фильм закончился</a>
       </div>
     </section>
@@ -1056,12 +1056,13 @@
       <div class="scene">
         <span class="butterfly" aria-hidden="true"><span class="butterfly__body"></span></span>
         <p class="eyebrow">после титров</p>
+        <p class="whisper" id="filmLine" style="margin-bottom:18px" hidden>Не спеши меня отпускать.</p>
         <h2>Помнишь своё слово?</h2>
-        <p class="lead">В начале ты написала, чего ждёшь: <span class="fin-word" id="finWord">то самое</span>.</p>
-        <p class="lead">Я запомнил.</p>
+        <p class="lead">В начале ты оставила слово: <span class="fin-word" id="finWord">то самое</span>.</p>
+        <p class="lead">Теперь назови одним словом, каким этот вечер стал. Можно тем же.</p>
         <div class="divider"></div>
-        <p class="lead">Теперь экран нам больше не нужен.</p>
-        <a class="next" href="#s-end">иди ко мне</a>
+        <p class="whisper">Скажи его мне, вслух. Дальше — без экрана.</p>
+        <a class="next" href="#s-end">А теперь иди ко мне</a>
       </div>
     </section>
 
@@ -1076,7 +1077,30 @@
 
   <script>
     /* Ссылки на треки; пусто = ничего не откроется. */
-    var MUSIC = { threshold:"", table:"", valley:"", gift:"", film:"" };
+    var MUSIC = { threshold:"", table:"", gift:"" };
+    /* 20 карт разговора: 4 главы по 5. */
+    var QUESTIONS = [
+      ["глава первая — смешное", "Какая моя привычка тебя смешит?"],
+      ["глава первая — смешное", "Что ты подумала обо мне при самой первой встрече? Честно."],
+      ["глава первая — смешное", "Какой самый странный факт о тебе, который никто не угадает?"],
+      ["глава первая — смешное", "Если бы про нас сняли реалити-шоу — как бы оно называлось?"],
+      ["глава первая — смешное", "Что ты гуглила в последний раз в три часа ночи?"],
+      ["глава вторая — что замечаю", "Что во мне ты заметила первым?"],
+      ["глава вторая — что замечаю", "Какой мой жест или слово запомнились тебе сильнее всего?"],
+      ["глава вторая — что замечаю", "Что я делаю лучше, чем сам о себе думаю?"],
+      ["глава вторая — что замечаю", "Когда ты поняла, что я тебе нравлюсь? Момент, не дата."],
+      ["глава вторая — что замечаю", "Что у нас с тобой общего, чего нет у других?"],
+      ["глава третья — чего не говорю", "Какой комплимент ты хотела бы услышать, но никто не догадывается его сказать?"],
+      ["глава третья — чего не говорю", "О чём ты думаешь перед сном, когда всё хорошо?"],
+      ["глава третья — чего не говорю", "Какое воспоминание ты включаешь, когда нужно согреться?"],
+      ["глава третья — чего не говорю", "Что тебя успокаивает лучше всего на свете?"],
+      ["глава третья — чего не говорю", "Какой наш момент ты бы прожила ещё раз?"],
+      ["глава четвёртая — куда хочется вдвоём", "Куда бы ты хотела, чтобы я тебя увёз — без бюджета и расписания?"],
+      ["глава четвёртая — куда хочется вдвоём", "Каким было бы наше следующее свидание, если бы его придумывала ты?"],
+      ["глава четвёртая — куда хочется вдвоём", "Чему бы ты хотела меня научить? А научиться у меня?"],
+      ["глава четвёртая — куда хочется вдвоём", "Какая маленькая традиция должна появиться только у нас двоих?"],
+      ["глава четвёртая — куда хочется вдвоём", "Что ты хочешь слышать от меня чаще?"]
+    ];
     /* Заряд B: впиши точное наблюдение из переписки. Пусто = общая строка. */
     var OBSERVATION = "";
 
@@ -1108,6 +1132,8 @@
           if(sec && sec.id==="s-finale"){
             var w = byId("finWord");
             if(w) w.textContent = word ? "«"+word+"»" : "то самое";
+            var fl = byId("filmLine");
+            if(fl && filmChoice){ fl.textContent = FILM_LINES[filmChoice]; fl.hidden = false; }
           }
           updatePips();
           try{ window.scrollTo(0,0); }catch(e){}
@@ -1128,8 +1154,32 @@
             var box = choice.parentNode, list = box.getElementsByClassName("choice");
             for(var i=0;i<list.length;i++){ list[i].className = list[i].className.replace(/\s*is-picked/,""); }
             choice.className += " is-picked";
+            if(choice.getAttribute("data-film")) filmChoice = choice.getAttribute("data-film");
           }
         });
+
+        /* колода вопросов: «мы наговорились» открывается после 20-й карты */
+        var qi = 0;
+        var qNext = byId("qNext"), qDone = byId("qDone");
+        function renderQ(){
+          var q = QUESTIONS[qi];
+          byId("qChapter").textContent = q[0];
+          byId("qText").textContent = q[1];
+          byId("qNum").textContent = "карта " + (qi+1);
+          if(qNext) qNext.textContent = (qi === QUESTIONS.length-1) ? "это была последняя" : "следующая";
+        }
+        if(qNext && qDone){
+          qDone.style.display = "none";
+          renderQ();
+          qNext.addEventListener("click", function(){
+            if(qi < QUESTIONS.length-1){ qi++; renderQ(); }
+            else { qNext.style.display = "none"; qDone.style.display = ""; }
+          });
+        }
+
+        /* выбор в кино меняет первую строку финала */
+        var filmChoice = "";
+        var FILM_LINES = { hand: "Твоя ладонь всё ещё здесь. Не убирай.", hug: "Не спеши меня отпускать." };
 
         var wi = byId("wordIn");
         if(wi){ wi.addEventListener("keydown", function(e){
