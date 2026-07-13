@@ -2,7 +2,6 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="robots" content="noindex,nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#070b12">
   <meta name="color-scheme" content="dark">
@@ -966,13 +965,13 @@
     <section class="screen" id="s-letter">
       <div class="letter">
         <div class="letter__seal">✦</div>
-        <p>Ты уже у двери. Не звони, сначала дочитай.</p>
-        <p>Я придумал нам вечер.</p>
+        <p>Ты у моей двери. Не звони. Сначала прочитай.</p>
+        <p>Я придумал нам вечер. Весь, до титров.</p>
         <div class="field">
-          <label for="wordIn">оставь одно слово: с каким ты пришла</label>
+          <label for="wordIn">одно слово: чего ты ждёшь от этого вечера</label>
           <input id="wordIn" type="text" maxlength="24" autocomplete="off" enterkeyhint="go" placeholder="одно слово" />
         </div>
-        <p class="soft">В конце спрошу, с каким уходишь.</p>
+        <p class="soft">В конце оно мне понадобится.</p>
         <a class="next" style="max-width:none" href="#s-threshold" data-enter>открыть первую часть</a>
       </div>
     </section>
@@ -981,8 +980,8 @@
       <div class="scene">
         <p class="eyebrow">у двери</p>
         <h2>Заходи</h2>
-        <p class="lead">Дверь за спиной, город снаружи. Пусть пару секунд будет тихо.</p>
-        <p class="whisper">Дай себя обнять. Потом налью нам что-нибудь.</p>
+        <p class="lead">Куртку давай сюда. И сначала — обними меня.</p>
+        <p class="whisper">Город остался снаружи.</p>
         <button class="music" type="button" data-music="threshold">поставить музыку</button>
         <a class="next" href="#s-table">я вошла</a>
       </div>
@@ -991,15 +990,15 @@
     <section class="screen" id="s-table" data-part="1">
       <div class="scene">
         <p class="eyebrow">за столом</p>
-        <h2>Сделаем свет потише</h2>
-        <p class="lead">Положи телефон между нами. Сначала нальём друг другу, потом себе.</p>
+        <h2>Свет уже потише</h2>
+        <p class="lead">Телефон — экраном вниз. Наливаю я.</p>
         <p class="whisper">Тост короткий: за то, что ты пришла.</p>
         <div class="choices" data-choices>
-          <button class="choice" type="button">Расскажи, как прошёл день. По-честному.</button>
-          <button class="choice" type="button">Что тебя сегодня разозлило или рассмешило?</button>
+          <button class="choice" type="button">Расскажи свой день. По-честному.</button>
+          <button class="choice" type="button">Что тебя сегодня рассмешило?</button>
         </div>
-        <p class="whisper">Ты рассказываешь, я слушаю и спрашиваю. Потом наоборот.</p>
-        <p class="whisper" style="margin-top:18px">Я тут кое-что про тебя запомнил и припрятал. Дойдём — покажу.</p>
+        <p class="whisper">Ты рассказываешь, я слушаю. Потом наоборот.</p>
+        <p class="whisper" style="margin-top:18px">Кое-что я для тебя припрятал. Потом.</p>
         <button class="music" type="button" data-music="table">поставить музыку</button>
         <a class="next" href="#s-closeup">дальше</a>
       </div>
@@ -1008,13 +1007,13 @@
     <section class="screen" id="s-closeup" data-part="2">
       <div class="scene">
         <p class="eyebrow">ближе</p>
-        <h2>Убери телефон совсем</h2>
-        <p class="lead">Один вопрос, но честный. Выбери, на какой ответишь.</p>
+        <h2>Теперь без экранов</h2>
+        <p class="lead">Один вопрос, отвечаем оба. Я отвечу первым. Потом ты — только без красивой версии.</p>
         <div class="choices" data-choices>
-          <button class="choice" type="button">Про что ты почти никому не рассказываешь?</button>
-          <button class="choice" type="button">Когда ты последний раз была собой на все сто?</button>
+          <button class="choice" type="button">Когда ты поняла, что я тебе нравлюсь? Момент, не дата.</button>
+          <button class="choice" type="button">Какой наш момент ты бы прожила ещё раз?</button>
         </div>
-        <p class="whisper">Дальше просто слушаем. Молчать тоже можно, сколько нужно.</p>
+        <p class="whisper">Не торопись. Времени у нас много.</p>
         <a class="next" href="#s-valley">мы наговорились</a>
       </div>
     </section>
@@ -1023,8 +1022,8 @@
       <div class="scene">
         <p class="eyebrow">передышка</p>
         <h2>Выдохнули</h2>
-        <p class="lead">Убери со стола. Врубай самый дурацкий трек, какой найдёшь.</p>
-        <p class="whisper">Пару минут ни о чём. Потанцуем криво, посмеёмся.</p>
+        <p class="lead">Уберём со стола вдвоём. Врубай самый дурацкий трек, какой найдёшь.</p>
+        <p class="whisper">Потанцуем криво. Никто не видит.</p>
         <button class="music" type="button" data-music="valley">дурацкий трек</button>
         <a class="next" href="#s-gift">дальше</a>
       </div>
@@ -1035,51 +1034,40 @@
         <p class="eyebrow">тебе</p>
         <h2>Держи</h2>
         <div class="gift is-open" aria-hidden="true"><div class="gift__box"></div><div class="gift__lid"></div><div class="gift__ribbon"></div></div>
-        <p class="lead" id="giftLine">Помнишь, ты как-то обмолвилась про это. Я запомнил.</p>
-        <p class="whisper">Ничего не говори в ответ. Просто открой.</p>
+        <p class="lead" id="giftLine">Я так и не понял: клевер это или бабочка. Посмотри сама.</p>
+        <p class="whisper">Дай руку — надену.</p>
         <button class="music" type="button" data-music="gift">поставить музыку</button>
-        <a class="next" href="#s-piano">дальше</a>
+        <a class="next" href="#s-film">дальше</a>
       </div>
     </section>
 
-    <section class="screen" id="s-piano" data-part="4">
-      <div class="scene">
-        <p class="eyebrow">три ноты</p>
-        <h2>Тут я сыграю</h2>
-        <p class="lead">Только честно: руки не помнят, месяцами не садился.</p>
-        <p class="whisper">Дай мне три ноты или просто настроение. Соберу что-нибудь. Промажу — посмеёмся.</p>
-        <button class="music" type="button" data-music="piano">поставить музыку</button>
-        <a class="next" href="#s-film">сыграл</a>
-      </div>
-    </section>
-
-    <section class="screen" id="s-film" data-part="5">
+    <section class="screen" id="s-film" data-part="4">
       <div class="scene">
         <p class="eyebrow">кино</p>
         <h2>Гасим свет</h2>
-        <p class="lead">Дальше плед и близкое плечо.</p>
-        <p class="whisper">Отложи телефон. Досмотрите — вернись сюда.</p>
+        <p class="lead">Плед на двоих. Ближе, чем обычно.</p>
+        <p class="whisper">Телефон отложи. После титров — сюда.</p>
         <button class="music" type="button" data-music="film">поставить музыку</button>
         <a class="next" href="#s-finale">фильм закончился</a>
       </div>
     </section>
 
-    <section class="screen" id="s-finale" data-part="6">
+    <section class="screen" id="s-finale" data-part="5">
       <div class="scene">
         <span class="butterfly" aria-hidden="true"><span class="butterfly__body"></span></span>
         <p class="eyebrow">после титров</p>
-        <h2>С каким уходишь?</h2>
-        <p class="lead">Ты пришла со словом <span class="fin-word" id="finWord">тем самым</span>. А уходишь с каким?</p>
-        <p class="whisper">Скажи вслух, не сюда.</p>
+        <h2>Помнишь своё слово?</h2>
+        <p class="lead">В начале ты написала, чего ждёшь: <span class="fin-word" id="finWord">то самое</span>.</p>
+        <p class="lead">Я запомнил.</p>
         <div class="divider"></div>
-        <p class="lead">Последнее тут не напишется. Дальше не про телефон.</p>
-        <a class="next" href="#s-end">закрыть вечер</a>
+        <p class="lead">Теперь экран нам больше не нужен.</p>
+        <a class="next" href="#s-end">иди ко мне</a>
       </div>
     </section>
 
     <section class="screen" id="s-end">
-      <div class="scene">
-        <p>Всё. Телефон молчит.<br>Дальше только мы.</p>
+      <div class="scene" style="text-align:center">
+        <span class="butterfly" aria-hidden="true" style="opacity:.35"><span class="butterfly__body"></span></span>
       </div>
     </section>
   </main>
@@ -1088,14 +1076,14 @@
 
   <script>
     /* Ссылки на треки; пусто = ничего не откроется. */
-    var MUSIC = { threshold:"", table:"", valley:"", gift:"", piano:"", film:"" };
+    var MUSIC = { threshold:"", table:"", valley:"", gift:"", film:"" };
     /* Заряд B: впиши точное наблюдение из переписки. Пусто = общая строка. */
     var OBSERVATION = "";
 
     (function(){
       try{
         var word = "";
-        var PARTS = 7;
+        var PARTS = 6;
 
         function byId(id){ return document.getElementById(id); }
 
@@ -1119,7 +1107,7 @@
           var sec = currentTarget();
           if(sec && sec.id==="s-finale"){
             var w = byId("finWord");
-            if(w) w.textContent = word ? "«"+word+"»" : "тем самым";
+            if(w) w.textContent = word ? "«"+word+"»" : "то самое";
           }
           updatePips();
           try{ window.scrollTo(0,0); }catch(e){}
